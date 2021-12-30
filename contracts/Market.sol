@@ -88,7 +88,7 @@ contract NFTMarket is ReentrancyGuard {
         );
     }
 
-    /* Places an item for sale on the marketplace - must pay a listing fee to place on Market */
+    /* Remove Item from being listed on Market - lister is not refunded listing fee */
     function unlistForSaleItem(address nftContract, uint256 tokenId)
         public
         payable
