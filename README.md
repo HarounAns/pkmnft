@@ -1,4 +1,16 @@
+
 # Pokemon NFT
+Smart Contract and Web App for Pokemon NFTs and Market Place. Uses Hardhat for Smart Contract development and deployments. Uses React for frontend application. Will be built on Polygon.
+
+## Access Patterns and Operations
+```shell
+fetchMyItems: Access all Pokemon NFTs I own
+fetchMarketItems: Access Market Place items that are for Sale
+createToken: Mint a new random Pokemon NFT
+listItemForSale: Put Pokemon NFT on the market (costs listing fee - how we make money)
+unlistItemForSale: take Pokemon off the Market (listing fee is not refunded)
+buyItem: buy Pokemon NFT from Market
+```
 
 ## Basic Sample Hardhat Project
 
