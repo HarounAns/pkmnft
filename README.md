@@ -6,6 +6,7 @@ Smart Contract and Web App for Pokemon NFTs and Market Place. Uses Hardhat for S
 ```shell
 fetchMyItems: Access all Pokemon NFTs I own
 fetchMarketItems: Access Market Place items that are for Sale
+fetchMyListedItems: Access all Pokemon NFTs I have listed for Sale
 createToken: Mint a new random Pokemon NFT
 listItemForSale: Put Pokemon NFT on the market (costs listing fee - how we make money)
 unlistItemForSale: take Pokemon off the Market (listing fee is not refunded)

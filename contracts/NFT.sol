@@ -13,6 +13,7 @@ contract NFT is ERC721URIStorage {
     Counters.Counter private _tokenIds;
     address contractAddress;
     struct Pokemon {
+        uint256 tokenId;
         string name;
         uint256[6] ivs; // HP, ATK, DEF, SpA, SpD, SPEED
     }
@@ -124,7 +125,7 @@ contract NFT is ERC721URIStorage {
         uint256[6] memory _ivs
     ) internal virtual {
         require(_exists(tokenId), "Setting Pokemon with nonexistent token");
-        _pokemonMap[tokenId] = Pokemon(_pokemonName, _ivs);
+        _pokemonMap[tokenId] = Pokemon(tokenId, _pokemonName, _ivs);
     }
 
     function pokemon(uint256 tokenId)

@@ -14,6 +14,9 @@ module.exports = {
       accounts: [privateKey]
     }
   },
+  paths: {
+    artifacts: './src/artifacts'
+  },
   solidity: {
     version: "0.8.4",
     settings: {

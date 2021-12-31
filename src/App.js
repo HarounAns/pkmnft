@@ -1,25 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
+import Market from './Pages/Market';
+import CreateToken from './Pages/CreateToken';
+import Navbar from './Components/Navbar';
+import { Route, Switch } from 'react-router-dom';
+import MyTokens from './Pages/MyTokens';
+import { useState } from 'react';
 
 function App() {
+  const { ethereum } = window;
+  const [addr, setAddr] = useState(ethereum?.selectedAddress)
+
+  if (!ethereum) {
+    return (
+      <div className="App">
+        Please Connect your Ethereum Wallet
+      </div>
+    )
+  }
+
+  ethereum.on('accountsChanged', (accounts) => {
+    setAddr(accounts[0]);
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar addr={addr} />
+      <Switch>
+        <Route path="/" render={() => <Market addr={addr} />} exact />
+        <Route path="/mint" component={CreateToken} />
+        <Route path="/my-tokens" render={() => <MyTokens addr={addr} />} />
+      </Switch>
     </div>
-  );
+  )
 }
 
 export default App;
