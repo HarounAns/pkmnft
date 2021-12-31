@@ -60,6 +60,8 @@ export default function MyTokens({ addr }) {
 
     return (
         <Container style={{ marginBottom: "20px" }}>
+            <h5 style={{ marginTop: "20px" }}>My Tokens</h5>
+
             {pokemonList.map((pokemon, i) => (
                 <Container key={i} style={{ marginTop: "50px" }}>
                     <PokemonCard 

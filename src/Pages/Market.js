@@ -69,6 +69,7 @@ export default function Market({ addr }) {
     }
     return (
         <Container>
+            <h5 style={{ marginTop: "20px" }}>Marketplace</h5>
             {marketItems.map((item, i) => {
                 const { pokemon, price, seller, marketItemId } = item
                 return (
